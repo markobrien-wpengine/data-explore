@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+    db:
+        # Local Postgresql DB seeded from SQL script
+        image: postgres:latest
+        restart: always
+        env_file:
+            - database.env
+        ports:
+          - "54322:5432"
+        volumes:
+          - ./docker/.compose-data/postgres-data/:/var/lib/postgresql/data
+          - ./sql/create-tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+          - ./sql/fill-tables.sql:/docker-entrypoint-initdb.d/fill_tables.sql

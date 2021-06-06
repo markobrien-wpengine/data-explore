@@ -1,0 +1,21 @@
+# compiled files
+*.py[co]
+__pycache__
+
+# Ignore IDE/development related files
+.idea/
+.vscode/
+.DS_Store
+.tox
+
+# Most projects end up with a local.env that can contain config settings/credentials
+local.env
+
+# This directory where the local database data is stored
+.compose-data
+
+db.sqlite3
+workspace/
+
+venv/
+
